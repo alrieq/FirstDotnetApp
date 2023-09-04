@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Khalid Alahmadi</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<h2>Products</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Maker</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th> <!-- You can add this column if you have a "Price" property in your JSON data -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Image</td>
+                <td>@product.Discreption</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
